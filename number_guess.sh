@@ -7,7 +7,7 @@ PSQL="psql --username=freecodecamp --dbname=number_guess -t --no-align -c"
 SECRET_NUMBER=$(( RANDOM % 1000 + 1 ))
 
 # Ask for username
-echo "Enter  username:"
+echo "Enter your username:"
 read USERNAME
 
 # Check if the user already exists in the database
