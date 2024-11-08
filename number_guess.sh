@@ -11,7 +11,7 @@ echo "Enter your username:"
 read USERNAME
 
 # Check if the user already exists in the database
-#USER_INFO=$($PSQL "SELECT user_id, games_played, best_game FROM users WHERE username='$USERNAME'")
+USER_INFO=$($PSQL "SELECT user_id, games_played, best_game FROM users WHERE username='$USERNAME'")
 
 # Process user information based on whether they exist in the database
 if [[ -z $USER_INFO ]]; then
@@ -68,4 +68,5 @@ else
   fi
   UPDATE_STATS=$($PSQL "UPDATE users SET games_played = $GAMES_PLAYED, best_game = $BEST_GAME WHERE user_id = $USER_ID")
 fi
+
 
